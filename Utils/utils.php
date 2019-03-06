@@ -1,10 +1,6 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: p17002476
- * Date: 06/03/19
- * Time: 14:52
- */
+
+
 
 function start_page($title, $cssname) {
     echo ('
@@ -23,9 +19,9 @@ function start_page($title, $cssname) {
     );
 }
 
-
-
 function end_page() {
     echo('</body>
           </html>');
 }
+
+
