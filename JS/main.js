@@ -10,17 +10,45 @@ $(document).ready(function() {
             $('body').append(
                 $('<form />').append(
                     $('<input />').attr({
-                                  "id":"loginForm",
-                                  "name": "login",
-                                  "type":"text",
-                                  "placeholder":"login"})
-                                  .css('background-color','red'),
+                                      "id":"loginForm",
+                                      "name": "login",
+                                      "type":"text",
+                                      "placeholder":"login",
+                                  })
+                                  .css({
+                                      "background-color" : "yellow",
+                                      "border" : "0",
+                                      "margin-left" : "50px",
+                                      "margin-right" : "20px",
+                                  }),
 
-                    $('<input />').attr('id','passwordForm')
-                                  .attr('name', 'password')
-                                  .attr('type','password')
-                                  .attr('placeholder','password'),
-                    $('<button />').attr('type', 'submit').html('Se connecter')
+                    $('<input />').attr({
+                                      "id":"passwordForm",
+                                      "name": "password",
+                                      "type":"password",
+                                      "placeholder":"password"})
+                                  .css({
+                                     "background-color" : "yellow",
+                                     "border" : "0",
+                                     "margin-right" : "20px",
+                    }),
+
+                    $('<button />').attr({
+                        "name" : "buttonForm",
+                        "type": "submit",
+
+                    }).css({
+                        "background-color": "#0066ff",
+                        "border": "none",
+                        "color": "white",
+                        "margin-left" : "30px",
+                        "padding": "10px 20px",
+                        "text-align": "center",
+                        "text-decoration": "none",
+                        "display": "inline-block",
+                        "font-size": "16px",
+                    }).html('Se connecter')
+
                 ).submit(function() {
                     $.ajax({
                         url: 'login.php',
@@ -37,8 +65,10 @@ $(document).ready(function() {
             /* La personne est connectée */
         }
 
-        if(data.hasOwnProperty('message')) {
+        /*if(data.hasOwnProperty('message')) {
             alert(data.message);
-        }
+        }*/
     });
+
+
 });
