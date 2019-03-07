@@ -9,8 +9,17 @@ $(document).ready(function() {
 
             $('body').append(
                 $('<form />').append(
-                    $('<input />').attr('name', 'login'),
-                    $('<input />').attr('name', 'password'),
+                    $('<input />').attr({
+                                  "id":"loginForm",
+                                  "name": "login",
+                                  "type":"text",
+                                  "placeholder":"login"})
+                                  .css('background-color','red'),
+
+                    $('<input />').attr('id','passwordForm')
+                                  .attr('name', 'password')
+                                  .attr('type','password')
+                                  .attr('placeholder','password'),
                     $('<button />').attr('type', 'submit').html('Se connecter')
                 ).submit(function() {
                     $.ajax({
