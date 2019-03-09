@@ -8,7 +8,10 @@ $(document).ready(function() {
             /* La personne n'est pas connectée */
 
             $('body').append(
-                $('<form />').append(
+                $('<form />')
+                    .attr({"method" : "POST",
+                           "id" : "formConnect"})
+                    .append(
                     $('<input />').attr({
                                       "id":"loginForm",
                                       "name": "login",
@@ -54,8 +57,10 @@ $(document).ready(function() {
                         url: 'login.php',
                         method: 'post',
                         data: $(this).serialize()
-                    }).done(function (done){
-
+                    }).done(function (data){
+                        if(data.success === true) {
+                            
+                        }
                     });
                     return false;
                 })

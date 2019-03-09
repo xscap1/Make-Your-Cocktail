@@ -1,5 +1,10 @@
 <?php
 
+
+// Valeur a retourner en cas de succès de connexion
+$retour = new stdClass();
+$retour->success = false;
+
 /**
  * Paramètre pour la base de données
  */
@@ -15,17 +20,43 @@ $options = [
     PDO::ATTR_DEFAULT_FETCH_MODE => PDO::FETCH_ASSOC,
     PDO::ATTR_EMULATE_PREPARES   => false,
 ];
+
+
+
+$username  = filter_input(INPUT_POST, 'loginForm');
+$password = filtre_input(INPUT_POST, 'passwordForm');
+$messageSuccess = "Bienvue " . $username . " !";
+
+if (empty($username) || empty($password)) echo($messageEmpty = "Veuillez remplir tous les champs");
+
+
 try {
 
     // ESSAI CONNEXION BASE DE DONNÉES
     $pdo = new PDO($dsn, $user, $pass, $options);
 
     // AFFICHAGE D'UN UTILISATEUR POUR VÉRIFIER QUE TOUT FONCTIONNE
-    $stmt = $pdo->query('SELECT USERNAME FROM USERS WHERE ID = 1');
-    while ($row = $stmt->fetch())
-    {
-        echo 'L\' utilisateur sélectionné est :  ' . $row['USERNAME'] . "\n";
+    $stmt = $pdo->query("SELECT * FROM USERS WHERE USERNAME = " . $username . " AND PWD = " . $password);
+    $row = $stmt->fetch();
+    if ($row == $stmt) {
+        session_start();
+        $_SESSION['user_id'] = $row['USERNAME']; //$username;
+        echo ($messageSuccess);
+        echo json_encode($retour);
     }
+
+    else {
+        ?>
+
+        <script>
+            let message = "L'identifiant ou le mot de passe sont incorrects";
+            alert(message);
+        </script>
+
+<?php
+        echo json_encode($retour);
+    }
+
 
 
 
