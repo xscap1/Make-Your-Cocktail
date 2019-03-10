@@ -6,10 +6,3 @@
  * Time: 01:50
  */
 
-
-$username  = $_POST["loginForm"];
-$password = $_POST["passwordForm"];
-
-
-echo($username);
-echo($password);

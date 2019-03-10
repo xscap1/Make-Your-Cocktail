@@ -7,6 +7,7 @@ $(document).ready(function() {
         if(data.success===false) {
             /* La personne n'est pas connectée */
 
+
             $('body').append(
                 $('<form />')
                     .attr({"method" : "POST",
@@ -14,7 +15,7 @@ $(document).ready(function() {
                            })
                     .append(
                     $('<input />').attr({
-                                      "id":"loginForm",
+                                      "id":"login",
                                       "name": "login",
                                       "type":"text",
                                       "placeholder":"login",
@@ -27,7 +28,7 @@ $(document).ready(function() {
                                   }),
 
                     $('<input />').attr({
-                                      "id":"passwordForm",
+                                      "id":"password",
                                       "name": "password",
                                       "type":"password",
                                       "placeholder":"password"})
@@ -54,19 +55,22 @@ $(document).ready(function() {
                     }).html('Se connecter')
 
                 ).submit(function() {
-                    // var loginForm = $(#loginForm).value;
-                    // var passwordForm = $(#passwordForm).value;
-                    // var dataString = 'loginForm='+ loginForm + '&passwordForm=' + passwordForm;
 
                     $.ajax({
-                        url: 'login.php',
-                        method: 'post',
-                        dataForm : $(this).serialize()
-                    }).done(function (){
-                             console.log(typeof document.getElementById('loginForm').value);
+                        type: "post",
+                        url : "login.php",
+                        data : $(this).serialize(),
+                    }).done(function (data){
+                           window.location.href = 'login.php';
+
+
+
+                            //console.log(document.getElementById('#loginForm').value);
                             // console.log(document.getElementById('passwordForm').value);
                             // alert(document.getElementById('loginForm').value);
                             // alert("form fournit");
+
+
                     });
                     return false;
                 })

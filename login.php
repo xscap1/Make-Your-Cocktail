@@ -1,14 +1,14 @@
 <?php
 
-require_once 'Utils/utils.php';
+session_start();
 
 
+
+$username  = $_POST['login'];
+$password = $_POST['password'];
 
 
 // Valeur a retourner en cas de succès de connexion
-$retour = new stdClass();
-$retour->success = false;
-$messageSuccess = "Bienvenue " . $username . " !";
 
 /**
  * Paramètre pour la base de données
@@ -30,8 +30,6 @@ $options = [
 
 
 
-if (empty($username) || empty($password)) echo($messageEmpty = "Veuillez remplir tous les champs");
-
 
 
 try {
@@ -39,10 +37,29 @@ try {
     // ESSAI CONNEXION BASE DE DONNÉES
     $pdo = new PDO($dsn, $user, $pass, $options);
 
-    // AFFICHAGE D'UN UTILISATEUR POUR VÉRIFIER QUE TOUT FONCTIONNE
-   // $stmt = $pdo->query('SELECT * FROM USERS WHERE USERNAME = ' . $username . ' AND PWD = ' .$password . ';');
+    $query = $pdo->prepare("SELECT * FROM USERS WHERE USERNAME=? AND PWD=?");
+    $query->execute(array($username,$password));
 
-    $stmt = $pdo->query("SELECT * FROM USERS WHERE USERNAME =" . $pdo->quote($username) . " AND PWD = " . $pdo->quote($password) . ";"  );
+    if($result = $query->fetch(PDO::FETCH_ASSOC)) {
+        $_SESSION['user_id'] = $result['user_id'];
+        $msgSuccess = "Bien connecté";
+        header('Location: index.php');
+        exit(0);
+    }
+
+    else {
+        $msgSuccess = " Non connceté";
+        ?> <script> alert('L\'indentifiant ou le mot de passe est incorrect');
+                    window.location.href = 'index.php';
+           </script>
+
+        <?php
+    }
+
+    // AFFICHAGE D'UN UTILISATEUR POUR VÉRIFIER QUE TOUT FONCTIONNE
+   // $stmt = $pdo->query('SELECT * FROM USERS WHERE USERNAME` = ' . $username . ' AND PWD = ' .$password . ';');
+
+    /*$stmt = $pdo->query("SELECT * FROM USERS WHERE USERNAME =" . $pdo->quote($username) . " AND PWD = " . $pdo->quote($password) . ";"  );
     $row = $stmt->fetch();
     if ($stmt->rowCount() > 0) {
         $retour->sucess = true;
@@ -54,28 +71,22 @@ try {
 
     else {
 
-        ?>
-
-        <script>
-            window.location = "index.php";
-            let message = "L'identifiant ou le mot de passe est incorrect";
-            alert(message);
-
-        </script>
 
 <?php
 
-    }
+    }*/
 
-//    header('Cache-Control: no-cache, must-revalidate');
-//    header('Expires: Mon, 26 Jul 1997 05:00:00 GMT');
-//    header('Content-type: application/json');
-//    echo json_encode($retour);
+
 
 } catch (\PDOException $e) {
     throw new \PDOException($e->getMessage(), (int)$e->getCode());
 }
 
+/*header('Cache-Control: no-cache, must-revalidate');
+header('Expires: Mon, 26 Jul 1997 05:00:00 GMT');
+header('Content-type: application/json');
 
+
+echo json_encode(['message' => $msgSuccess]);*/
 
 ?>

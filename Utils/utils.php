@@ -5,6 +5,7 @@
  * @param $title
  * @param $cssname
  */
+
 function start_page($title) {
     echo ('
         <!DOCTYPE html>
