@@ -3,13 +3,12 @@
 require_once 'Utils/utils.php';
 
 
-$username  = $_POST['loginForm'];
-$password = $_POST['passwordForm'];
+
 
 // Valeur a retourner en cas de succès de connexion
 $retour = new stdClass();
 $retour->success = false;
-$messageSuccess = "Bienvue " . $username . " !";
+$messageSuccess = "Bienvenue " . $username . " !";
 
 /**
  * Paramètre pour la base de données
@@ -44,8 +43,8 @@ try {
    // $stmt = $pdo->query('SELECT * FROM USERS WHERE USERNAME = ' . $username . ' AND PWD = ' .$password . ';');
 
     $stmt = $pdo->query("SELECT * FROM USERS WHERE USERNAME =" . $pdo->quote($username) . " AND PWD = " . $pdo->quote($password) . ";"  );
-    //$row = $stmt->fetch();
-    if ($stmt->columnCount() <= 1) {
+    $row = $stmt->fetch();
+    if ($stmt->rowCount() > 0) {
         $retour->sucess = true;
         session_start();
         $_SESSION['user_id'] = $row['USERNAME']; //$username;

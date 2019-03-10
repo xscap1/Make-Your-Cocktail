@@ -10,7 +10,8 @@ $(document).ready(function() {
             $('body').append(
                 $('<form />')
                     .attr({"method" : "POST",
-                           "id" : "formConnect"})
+                           "id" : "formConnect",
+                           })
                     .append(
                     $('<input />').attr({
                                       "id":"loginForm",
@@ -60,11 +61,11 @@ $(document).ready(function() {
                     $.ajax({
                         url: 'login.php',
                         method: 'post',
-
                         dataForm : $(this).serialize()
                     }).done(function (){
-
-                            alert(document.getElementById('loginForm').value);
+                             console.log(typeof document.getElementById('loginForm').value);
+                            // console.log(document.getElementById('passwordForm').value);
+                            // alert(document.getElementById('loginForm').value);
                             // alert("form fournit");
                     });
                     return false;
