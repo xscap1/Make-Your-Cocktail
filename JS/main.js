@@ -53,14 +53,19 @@ $(document).ready(function() {
                     }).html('Se connecter')
 
                 ).submit(function() {
+                    // var loginForm = $(#loginForm).value;
+                    // var passwordForm = $(#passwordForm).value;
+                    // var dataString = 'loginForm='+ loginForm + '&passwordForm=' + passwordForm;
+
                     $.ajax({
                         url: 'login.php',
                         method: 'post',
-                        data: $(this).serialize()
-                    }).done(function (data){
-                        if(data.success === true) {
-                            
-                        }
+
+                        dataForm : $(this).serialize()
+                    }).done(function (){
+
+                            alert(document.getElementById('loginForm').value);
+                            // alert("form fournit");
                     });
                     return false;
                 })
@@ -68,6 +73,10 @@ $(document).ready(function() {
         }
         else {
             /* La personne est connectée */
+
+            $.ajax({
+                url : 'index.php'
+            })
         }
 
         /*if(data.hasOwnProperty('message')) {

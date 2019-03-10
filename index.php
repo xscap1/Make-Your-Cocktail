@@ -1,13 +1,10 @@
 <?php
 
 session_start();
+require_once 'Utils/utils.php';
 
-//if(!(isset($_SESSION['user_id']))) header('Location: Authentification/authentification.php');
+start_page("Accueil");
 
-// Affichage
-require 'View/vueAccueil.php';
+echo ('<p> Bonjour ' . $_SESSION['user_id'] . ' bienvenue sur la page d\'accueil </p>');
 
-
-
-
-?>
+end_page();
