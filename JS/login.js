@@ -66,4 +66,59 @@ $(document).ready(function() {
             return false;
         })
     )
-}
+});
+
+
+$('body').append(
+
+
+    $('<button />').attr({
+        "name": "uniteButton",
+        "type": "submit",
+
+    }).css({
+        "background-color": "#0066ff",
+        "border": "none",
+        "color": "white",
+        "margin-left": "30px",
+        "padding": "10px 20px",
+        "text-align": "center",
+        "text-decoration": "none",
+        "display": "inline-block",
+        "font-size": "16px",
+    }).html('Créer unité')
+
+),
+
+    $('body').append(
+
+        $('<button />').attr({
+            "name": "cocktailButton",
+            "type": "submit",
+
+        }).css({
+            "background-color": "#0066ff",
+            "border": "none",
+            "color": "white",
+            "margin-left": "30px",
+            "padding": "10px 20px",
+            "text-align": "center",
+            "text-decoration": "none",
+            "display": "inline-block",
+            "font-size": "16px",
+        }).html('Créer cocktail'),
+    )
+
+
+$("#ingredientButton").on('click',function() {
+    $('body').append(
+        $('<h2 />').html('Nouvel ingrédient'),
+        $('<p />').html('Nom : '),
+        $('<input />').attr({
+            "id": "ingredientInput",
+            "name": "ingredientInput",
+            "type": "text",
+            "placeholder": "Entrer un ingrédient"
+        })
+    )
+});
