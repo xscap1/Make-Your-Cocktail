@@ -13,7 +13,7 @@ if(isset($_SESSION['user_id'])){
 }
 
 else {
-    echo('Veuillez vous connecter');
     header('Location: login.php' );
+    exit();
 }
 end_page();

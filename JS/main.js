@@ -103,12 +103,13 @@ $(document).ready(function() {
                         "display": "inline-block",
                         "font-size": "16px",
                     }).html('Deconnexion')
-                    ).submit(
+                    ).submit(function () {
                         $.ajax({
-                            url: 'logout.php'
+                            url : 'logout.php'
                         })
 
-                    )
+
+                    })
 
 
 
@@ -116,10 +117,6 @@ $(document).ready(function() {
 
                 );
 
-                //$(document).on('click','#logoutButton', function(){
-                  //  window.location.href = 'logout.php';
-
-                //})
             });
         }
 
