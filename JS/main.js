@@ -84,32 +84,42 @@ $(document).ready(function() {
                         "font-size": "16px",
                     }).html('Voir la liste des cocktails'),
 
+                    $('<form />').append(
 
                     $('<button />').attr({
                         "name": "logoutButton",
                         "id" : "logoutButton",
-                        "type": "button"
+                        "type": "submit"
 
                     }).css({
                         "background-color": "#0066ff",
                         "border": "none",
                         "color": "white",
+                        "margin-top" : "30px",
                         "margin-left": "30px",
                         "padding": "10px 20px",
                         "text-align": "center",
                         "text-decoration": "none",
                         "display": "inline-block",
                         "font-size": "16px",
-                    }).html('Déconnexion')
+                    }).html('Deconnexion')
+                    ).submit(
+                        $.ajax({
+                            url: 'logout.php'
+                        })
+
+                    )
+
+
 
 
 
                 );
 
-                $(document).on('click','#logoutButton', function(){
-                    window.location.href = 'logout.php';
+                //$(document).on('click','#logoutButton', function(){
+                  //  window.location.href = 'logout.php';
 
-                })
+                //})
             });
         }
 
