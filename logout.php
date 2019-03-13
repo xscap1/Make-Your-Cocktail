@@ -4,6 +4,9 @@
 // Détruit toutes les variables de session
 $_SESSION = array();
 
+$valeur = false;
+
+
 // Si vous voulez détruire complètement la session, effacez également
 // le cookie de session.
 // Note : cela détruira la session et pas seulement les données de session !
@@ -17,13 +20,18 @@ if (ini_get("session.use_cookies")) {
 
 // Finalement, on détruit la session.
 session_destroy();
+$valeur = true;
 
 
 header('Cache-Control: no-cache, must-revalidate');
 header('Expires: Mon, 26 Jul 1997 05:00:00 GMT');
 header('Content-type: application/json');
 
-echo json_encode(true);
+echo json_encode($valeur);
+
+if(!(isset($_SESSION['user_id']))){
+    header('Location: index.php');
+}
 
 ?>
 

@@ -7,9 +7,11 @@ $(document).ready(function() {
         if(data.success===false) {
             /* La personne n'est pas connectée */
 
+            // Gérer par l'index.
 
 
         }
+
         else {
             /* La personne est connectée */
 
@@ -80,12 +82,13 @@ $(document).ready(function() {
                         "text-decoration": "none",
                         "display": "inline-block",
                         "font-size": "16px",
-                    }).html('Voir liste cocktail'),
+                    }).html('Voir la liste des cocktails'),
 
 
                     $('<button />').attr({
                         "name": "logoutButton",
-                        "type": "submit",
+                        "id" : "logoutButton",
+                        "type": "button"
 
                     }).css({
                         "background-color": "#0066ff",
@@ -97,8 +100,16 @@ $(document).ready(function() {
                         "text-decoration": "none",
                         "display": "inline-block",
                         "font-size": "16px",
-                    }).html('Déconnexion'),
-                )
+                    }).html('Déconnexion')
+
+
+
+                );
+
+                $(document).on('click','#logoutButton', function(){
+                    window.location.href = 'logout.php';
+
+                })
             });
         }
 
