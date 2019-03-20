@@ -1,8 +1,8 @@
-$(document).ready(function() {
+$(document).ready(() => {
     $.ajax({
         url: 'is_connected.php',
 
-    }).done(function(data){
+    }).done((data) =>{
 
         if(data.success===false) {
             /* La personne n'est pas connectée */
@@ -17,7 +17,7 @@ $(document).ready(function() {
 
             $.ajax({
                 url : 'index.php'
-            }).done(function () {
+            }).done(() => {
                 $('body').append(
                     $('<button />').attr({
                         "id" : "ingredientButton",

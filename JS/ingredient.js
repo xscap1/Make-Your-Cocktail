@@ -7,7 +7,7 @@ class Ingredient {
 
 }
 
-$(document).ready(function() {
+$(document).ready(() => {
 
 
 
