@@ -34,7 +34,12 @@ $(document).ready(function() {
                         "text-decoration": "none",
                         "display": "inline-block",
                         "font-size": "16px",
-                    }).html('Créer ingrédient'),
+                    }).html('Créer ingrédient').click(function () {
+                        $.ajax({
+                            url : 'ingredient.php',
+
+                        })
+                    }),
 
                     $('<button />').attr({
                         "name": "uniteButton",
