@@ -30,31 +30,44 @@ $(document).ready(() => {
             $.ajax({
                 url : 'index.php'
             }).done(() => {
-                $('body').append(
-                    $('<button />').attr({
-                        "id" : "ingredientButton",
-                        "name": "ingredientButton",
-                        "type": "submit"
+                $('#ingredientButton').click( () => {
+                        $('body').append(
+                            $('<form />')
+                                .attr({
+                                    "method": "POST",
+                                    "id": "formIngredient"
+                                })
+                                .append(
 
-                    }).css({
-                        "background-color": "#0066ff",
-                        "border": "none",
-                        "color": "white",
-                        "margin-left": "30px",
-                        "padding": "10px 20px",
-                        "text-align": "center",
-                        "text-decoration": "none",
-                        "display": "inline-block",
-                        "font-size": "16px",
-                    }).html('Créer ingrédient').click( () => {
-                        $.ajax({
-                            url : 'ingredient.php',
+                                $('<h2 />').html('Nouvel ingrédient'),
+                                $('<p />').html('Nom : '),
+                                $('<input />').attr({
+                                    "id": "ingredientNameInput",
+                                    "name": "ingredientNameInput",
+                                    "type": "text",
+                                    "placeholder": "Entrer un ingrédient"}),
 
-                        })
+                                $('<p />').html('Description : '),
+                                $('<input />').attr({
+                                    "id": "ingredientDescInput",
+                                    "name": "ingredientDescInput",
+                                    "type": "text",
+                                    "placeholder": "Entrer une description"}),
+
+                                $('<button />').attr({
+                                    "name": "sendIngredient",
+                                    "id" : "sendIngredient",
+                                    "type": "submit"
+                                }).html('Envoyer')
+                            ).submit(() => {
+                                $.ajax({
+                                    url : 'ingredient.php'
+                                })
+
+
+                            })
+                        )
                     })
-
-                );
-
             });
         }
 
