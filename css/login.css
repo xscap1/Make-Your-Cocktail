@@ -1,12 +1,12 @@
 #username {
-    background-color: yellow;
+    background-color: red;
     border: 0;
     margin-left: 50px;
     margin-right: 20px;
 }
 
 #password {
-    background-color: yellow;
+    background-color: aquamarine;
     border: 0;
     margin-right: 20px;
 }
