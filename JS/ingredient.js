@@ -1,13 +1,15 @@
-class Ingredient {
+$(document).ready(() => {
 
-    constructor(nom, description) {
-        this.nom = nom;
-        this.description = description;
+    class Ingredient {
+
+        constructor(nom, description) {
+            this.nom = nom;
+            this.description = description;
+        }
+
     }
 
-}
 
-$(document).ready(() => {
     $.ajax({
         url: 'is_connected.php',
 
