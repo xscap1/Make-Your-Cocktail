@@ -33,6 +33,7 @@ $(document).ready(() => {
                 $('#ingredientButton').click( () => {
                         $('body').append(
                             $('<form />')
+
                                 .attr({
                                     "method": "POST",
                                     "id": "formIngredient"
@@ -58,8 +59,18 @@ $(document).ready(() => {
                                     "name": "sendIngredient",
                                     "id" : "sendIngredient",
                                     "type": "submit"
-                                }).html('Envoyer')
-                            ).submit(() => {
+                                })
+                                .css({
+
+                                    "display" : "block",
+                                    "margin-top": "10px"
+                                })
+                                .html('Envoyer')
+                            )
+
+
+                                .submit(() => {
+
                                 $.ajax({
                                     url : 'ingredient.php'
                                 })
