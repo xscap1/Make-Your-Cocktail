@@ -1,7 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
+<<<<<<< HEAD
     <list default="true" id="ca4046b3-d78c-46ac-b157-7e0bf75d728b" name="Default Changelist" comment="">
+=======
+    <list default="true" id="ca4046b3-d78c-46ac-b157-7e0bf75d728b" name="Default Changelist" comment="Test commit">
+>>>>>>> 14b50acb1b2261d1deefc6beec8bd3de223a9534
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/css/login.css" beforeDir="false" afterPath="$PROJECT_DIR$/css/login.css" afterDir="false" />
     </list>
@@ -25,6 +29,7 @@
     <expand />
     <select />
   </component>
+<<<<<<< HEAD
   <component name="FUSProjectUsageTrigger">
     <session id="1731748191">
       <usages-collector id="statistics.lifecycle.project">
@@ -71,6 +76,8 @@
       </usages-collector>
     </session>
   </component>
+=======
+>>>>>>> 14b50acb1b2261d1deefc6beec8bd3de223a9534
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
@@ -85,14 +92,20 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/login.php">
           <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
             <state relative-caret-position="-671">
               <caret line="50" column="45" selection-start-line="50" selection-start-column="45" selection-end-line="50" selection-end-column="45" />
+=======
+            <state relative-caret-position="338">
+              <caret line="118" lean-forward="true" selection-start-line="118" selection-end-line="118" />
+>>>>>>> 14b50acb1b2261d1deefc6beec8bd3de223a9534
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/css/login.css">
+<<<<<<< HEAD
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="120">
               <caret line="8" column="33" selection-start-line="8" selection-start-column="33" selection-end-line="8" selection-end-column="33" />
@@ -105,11 +118,17 @@
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="30">
               <caret line="2" column="1" selection-start-line="2" selection-start-column="1" selection-end-line="2" selection-end-column="1" />
+=======
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="360">
+              <caret line="24" lean-forward="true" selection-start-line="24" selection-end-line="24" />
+>>>>>>> 14b50acb1b2261d1deefc6beec8bd3de223a9534
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
+<<<<<<< HEAD
         <entry file="file://$PROJECT_DIR$/JS/main.js">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="1060">
@@ -123,15 +142,26 @@
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="465">
               <caret line="31" selection-start-line="31" selection-end-line="31" />
+=======
+        <entry file="file://$PROJECT_DIR$/JS/Ingredient.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="30">
+              <caret line="2" column="1" selection-start-line="2" selection-start-column="1" selection-end-line="2" selection-end-column="1" />
+>>>>>>> 14b50acb1b2261d1deefc6beec8bd3de223a9534
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/JS/login.js">
+        <entry file="file://$PROJECT_DIR$/JS/main.js">
           <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
             <state relative-caret-position="1530">
               <caret line="102" column="34" lean-forward="true" selection-start-line="102" selection-start-column="34" selection-end-line="102" selection-end-column="34" />
+=======
+            <state relative-caret-position="1275">
+              <caret line="85" lean-forward="true" selection-start-line="85" selection-end-line="85" />
+>>>>>>> 14b50acb1b2261d1deefc6beec8bd3de223a9534
             </state>
           </provider>
         </entry>
@@ -187,17 +217,11 @@
       </list>
     </option>
   </component>
-  <component name="JsBuildToolGruntFileManager" detection-done="true" sorting="DEFINITION_ORDER" />
-  <component name="JsBuildToolPackageJson" detection-done="true" sorting="DEFINITION_ORDER" />
   <component name="JsFlowSettings">
     <service-enabled>true</service-enabled>
     <exe-path />
     <other-services-enabled>true</other-services-enabled>
     <auto-save>true</auto-save>
-  </component>
-  <component name="JsGulpfileManager">
-    <detection-done>true</detection-done>
-    <sorting>DEFINITION_ORDER</sorting>
   </component>
   <component name="ProjectFrameBounds" fullScreen="true">
     <option name="width" value="1440" />
@@ -235,6 +259,11 @@
             <path>
               <item name="AlloService" type="b2602c69:ProjectViewProjectNode" />
               <item name="AlloService" type="462c0819:PsiDirectoryNode" />
+              <item name="Model" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="AlloService" type="b2602c69:ProjectViewProjectNode" />
+              <item name="AlloService" type="462c0819:PsiDirectoryNode" />
               <item name="Utils" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -257,7 +286,7 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$USER_HOME$/Téléchargements/html5-boilerplate_v7.0.1/index.html" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
-    <property name="settings.editor.selected.configurable" value="web-ide.project.structure" />
+    <property name="settings.editor.selected.configurable" value="settings.github" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
@@ -294,9 +323,13 @@
       <workItem from="1551964188081" duration="2776000" />
       <workItem from="1552251729596" duration="7300000" />
       <workItem from="1552329922863" duration="5057000" />
+<<<<<<< HEAD
       <workItem from="1552493777107" duration="438000" />
       <workItem from="1552919253143" duration="313000" />
       <workItem from="1553088690258" duration="41000" />
+=======
+      <workItem from="1553087408841" duration="959000" />
+>>>>>>> 14b50acb1b2261d1deefc6beec8bd3de223a9534
     </task>
     <task id="LOCAL-00001" summary="test login 3">
       <created>1552255521482</created>
@@ -323,7 +356,11 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
+<<<<<<< HEAD
     <option name="totallyTimeSpent" value="26405000" />
+=======
+    <option name="totallyTimeSpent" value="26572000" />
+>>>>>>> 14b50acb1b2261d1deefc6beec8bd3de223a9534
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -335,10 +372,13 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="0" width="1440" height="900" extended-state="0" />
-    <editor active="true" />
+    <frame x="-6" y="-27" width="1692" height="1083" extended-state="0" />
     <layout>
+<<<<<<< HEAD
       <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.22889842" />
+=======
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.22283272" />
+>>>>>>> 14b50acb1b2261d1deefc6beec8bd3de223a9534
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -351,9 +391,13 @@
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Database Changes" order="8" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" order="9" />
+<<<<<<< HEAD
       <window_info anchor="bottom" id="Terminal" order="10" visible="true" weight="0.32771084" />
+=======
+      <window_info active="true" anchor="bottom" id="Terminal" order="10" visible="true" weight="0.32719836" />
+>>>>>>> 14b50acb1b2261d1deefc6beec8bd3de223a9534
       <window_info anchor="bottom" id="Event Log" order="11" side_tool="true" />
-      <window_info anchor="bottom" id="File Transfer" order="12" visible="true" weight="0.12771085" />
+      <window_info anchor="bottom" id="File Transfer" order="12" weight="0.29038855" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -363,14 +407,16 @@
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
   </component>
-  <component name="VcsContentAnnotationSettings">
-    <option name="myLimit" value="2678400000" />
-  </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="test login 3" />
     <MESSAGE value="Login Completed" />
+<<<<<<< HEAD
     <MESSAGE value="Login Completed without refresh errors" />
     <option name="LAST_COMMIT_MESSAGE" value="Login Completed without refresh errors" />
+=======
+    <MESSAGE value="Test commit" />
+    <option name="LAST_COMMIT_MESSAGE" value="Test commit" />
+>>>>>>> 14b50acb1b2261d1deefc6beec8bd3de223a9534
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/css/main.css" />
@@ -436,17 +482,37 @@
         </state>
       </provider>
     </entry>
+<<<<<<< HEAD
     <entry file="file://$PROJECT_DIR$/index.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="240">
           <caret line="16" column="11" selection-start-line="16" selection-start-column="11" selection-end-line="16" selection-end-column="11" />
+=======
+    <entry file="file://$PROJECT_DIR$/JS/login.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="53">
+          <caret line="85" column="34" lean-forward="true" selection-start-line="85" selection-start-column="34" selection-end-line="85" selection-end-column="34" />
+>>>>>>> 14b50acb1b2261d1deefc6beec8bd3de223a9534
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/JS/Ingredient.js">
+<<<<<<< HEAD
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="30">
           <caret line="2" column="1" selection-start-line="2" selection-start-column="1" selection-end-line="2" selection-end-column="1" />
+=======
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="30">
+          <caret line="2" column="1" selection-start-line="2" selection-start-column="1" selection-end-line="2" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/JS/main.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1275">
+          <caret line="85" lean-forward="true" selection-start-line="85" selection-end-line="85" />
+>>>>>>> 14b50acb1b2261d1deefc6beec8bd3de223a9534
         </state>
       </provider>
     </entry>
@@ -457,15 +523,23 @@
         </state>
       </provider>
     </entry>
+<<<<<<< HEAD
     <entry file="file://$PROJECT_DIR$/JS/login.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1530">
           <caret line="102" column="34" lean-forward="true" selection-start-line="102" selection-start-column="34" selection-end-line="102" selection-end-column="34" />
+=======
+    <entry file="file://$PROJECT_DIR$/login.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="338">
+          <caret line="118" lean-forward="true" selection-start-line="118" selection-end-line="118" />
+>>>>>>> 14b50acb1b2261d1deefc6beec8bd3de223a9534
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/JS/main.js">
+    <entry file="file://$PROJECT_DIR$/css/login.css">
       <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
         <state relative-caret-position="1060">
           <caret line="106" column="32" lean-forward="true" selection-start-line="106" selection-start-column="32" selection-end-line="106" selection-end-column="32" />
         </state>
@@ -482,6 +556,10 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="120">
           <caret line="8" column="33" selection-start-line="8" selection-start-column="33" selection-end-line="8" selection-end-column="33" />
+=======
+        <state relative-caret-position="360">
+          <caret line="24" lean-forward="true" selection-start-line="24" selection-end-line="24" />
+>>>>>>> 14b50acb1b2261d1deefc6beec8bd3de223a9534
         </state>
       </provider>
     </entry>
