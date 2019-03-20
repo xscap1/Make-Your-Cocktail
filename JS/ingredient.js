@@ -33,13 +33,25 @@ $(document).ready(() => {
                 $('#ingredientButton').click(() => {
                     $('body').append(
 
+
+
                         $('<div>')
                             .attr({
                                 "id" : "divIngredient"
                             })
+
+
                             .append(
 
-                             $('<form />')
+                            $('<button>').attr({
+                            "id" : "buttonHide"
+                            })
+                                .css({
+                                    "margin-top" : "10px"
+                                })
+                            .html('Cacher'),
+
+                            $('<form />')
 
                             .attr({
                                 "method": "POST",
@@ -88,9 +100,9 @@ $(document).ready(() => {
                         )
                     );
 
-                    $('#ingredientButton').click( () => {
-                        $('#divIngredient').empty();
-                        $('body').appendTo('#divIngredient');
+                    $('#buttonHide').click( () => {
+                        $('#divIngredient').hide();
+
                     })
                 });
             });
