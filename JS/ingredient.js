@@ -24,6 +24,7 @@ $(document).ready(() => {
         }
 
         else {
+
             /* La personne est connectée */
 
             $.ajax({

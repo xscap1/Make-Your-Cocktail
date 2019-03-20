@@ -17,6 +17,7 @@ function start_page($title) {
             <meta name="viewport" content="width=device-width, initial-scale=1">
             <script src="JS/JQuery/jquery-3.3.1.min.js"></script>
             <script src="JS/main.js"></script>
+            <script src="JS/ingredient.js"></script>
             <link rel="stylesheet"  type="text/css" href="css/login.css">
             
         </head> 
