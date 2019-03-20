@@ -13,9 +13,9 @@ $(document).ready(() => {
     $.ajax({
         url: 'is_connected.php',
 
-    }).done((data) =>{
+    }).done((data) => {
 
-        if(data.success===false) {
+        if (data.success === false) {
             /* La personne n'est pas connectée */
 
             // Gérer par l'index.
@@ -28,62 +28,72 @@ $(document).ready(() => {
             /* La personne est connectée */
 
             $.ajax({
-                url : 'index.php'
+                url: 'index.php'
             }).done(() => {
-                $('#ingredientButton').click( () => {
-                        $('body').append(
-                            $('<form />')
+                $('#ingredientButton').click(() => {
+                    $('body').append(
 
-                                .attr({
-                                    "method": "POST",
-                                    "id": "formIngredient"
-                                })
-                                .append(
+                        $('<div>')
+                            .attr({
+                                "id" : "divIngredient"
+                            })
+                            .append(
 
+                             $('<form />')
+
+                            .attr({
+                                "method": "POST",
+                                "id": "formIngredient"
+                            })
+                            .append(
                                 $('<h2 />').html('Nouvel ingrédient'),
                                 $('<p />').html('Nom : '),
                                 $('<input />').attr({
                                     "id": "ingredientNameInput",
                                     "name": "ingredientNameInput",
                                     "type": "text",
-                                    "placeholder": "Entrer un ingrédient"}),
+                                    "placeholder": "Entrer un ingrédient"
+                                }),
 
                                 $('<p />').html('Description : '),
                                 $('<input />').attr({
                                     "id": "ingredientDescInput",
                                     "name": "ingredientDescInput",
                                     "type": "text",
-                                    "placeholder": "Entrer une description"}),
+                                    "placeholder": "Entrer une description"
+                                }),
 
                                 $('<button />').attr({
                                     "name": "sendIngredient",
-                                    "id" : "sendIngredient",
+                                    "id": "sendIngredient",
                                     "type": "submit"
                                 })
-                                .css({
+                                    .css({
 
-                                    "display" : "block",
-                                    "margin-top": "10px"
-                                })
-                                .html('Envoyer')
+                                        "display": "block",
+                                        "margin-top": "10px"
+                                    })
+                                    .html('Envoyer')
                             )
 
 
-                                .submit(() => {
+                            .submit(() => {
 
                                 $.ajax({
-                                    url : 'ingredient.php'
+                                    url: 'ingredient.php'
                                 })
 
 
                             })
                         )
+                    );
+
+                    $('#ingredientButton').click( () => {
+                        $('#divIngredient').empty();
+                        $('body').appendTo('#divIngredient');
                     })
+                });
             });
         }
-
-
     });
-
-
 });

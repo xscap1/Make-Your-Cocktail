@@ -35,9 +35,6 @@ $(document).ready(() => {
                         "display": "inline-block",
                         "font-size": "16px",
                     })
-                        .click(() => {
-                            $('#formIngredient').hide();
-                        })
                         .html('Créer ingrédient').click( () => {
                         $.ajax({
                             url : 'ingredient.php',
