@@ -34,7 +34,7 @@ $(document).ready(function() {
                         "text-decoration": "none",
                         "display": "inline-block",
                         "font-size": "16px",
-                    }).html('Créer ingrédient').click(function () {
+                    }).html('Créer ingrédient').click( () => {
                         $.ajax({
                             url : 'ingredient.php',
 
@@ -108,7 +108,7 @@ $(document).ready(function() {
                         "display": "inline-block",
                         "font-size": "16px",
                     }).html('Deconnexion')
-                    ).submit(function () {
+                    ).submit(() => {
                         $.ajax({
                             url : 'logout.php'
                         })
