@@ -1,13 +1,15 @@
+class Ingredient {
+
+    constructor(nom, description) {
+        this.nom = nom;
+        this.description = description;
+    }
+
+}
+
 $(document).ready(() => {
 
-    class Ingredient {
 
-        constructor(nom, description) {
-            this.nom = nom;
-            this.description = description;
-        }
-
-    }
 
 
     $.ajax({
@@ -33,25 +35,15 @@ $(document).ready(() => {
                 $('#ingredientButton').click(() => {
                     $('body').append(
 
-
-
-                        $('<div>')
-                            .attr({
-                                "id" : "divIngredient"
-                            })
-
-
-                            .append(
-
-                            $('<button>').attr({
+                        $('<button>').attr({
                             "id" : "buttonHide"
+                        })
+                            .css({
+                                "margin-top" : "10px"
                             })
-                                .css({
-                                    "margin-top" : "10px"
-                                })
                             .html('Cacher'),
 
-                            $('<form />')
+                        $('<form />')
 
                             .attr({
                                 "method": "POST",
@@ -91,21 +83,25 @@ $(document).ready(() => {
 
                             .submit(() => {
 
-                                $.ajax({
-                                    url: 'ingredient.php'
-                                })
+                                ingredientList.push(new Ingredient(('#ingredientNameInput').value,('#ingredientDescInput').value));
+                                // $.ajax({
+                                //     url: 'ingredient.php',
+                                //     data : $(this).serialize()
+                                // })
 
 
                             })
-                        )
+
                     );
 
                     $('#buttonHide').click( () => {
-                        $('#divIngredient').hide();
+                        $('#formIngredient').hide();
+                        $('#buttonHide').empty();
+
 
                     })
                 });
-            });
+            })
         }
     });
 });

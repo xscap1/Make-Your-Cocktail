@@ -18,6 +18,7 @@ function start_page($title) {
             <script src="JS/JQuery/jquery-3.3.1.min.js"></script>
             <script src="JS/main.js"></script>
             <script src="JS/ingredient.js"></script>
+            <script src="JS/ingredientList.js"></script>
             <link rel="stylesheet"  type="text/css" href="css/login.css">
             
         </head> 

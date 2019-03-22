@@ -92,23 +92,23 @@ $(document).ready(() => {
 
                     $('<form />').append(
 
-                    $('<button />').attr({
-                        "name": "logoutButton",
-                        "id" : "logoutButton",
-                        "type": "submit"
+                        $('<button />').attr({
+                            "name": "logoutButton",
+                            "id" : "logoutButton",
+                            "type": "submit"
 
-                    }).css({
-                        "background-color": "#0066ff",
-                        "border": "none",
-                        "color": "white",
-                        "margin-top" : "30px",
-                        "margin-left": "30px",
-                        "padding": "10px 20px",
-                        "text-align": "center",
-                        "text-decoration": "none",
-                        "display": "inline-block",
-                        "font-size": "16px",
-                    }).html('Deconnexion')
+                        }).css({
+                            "background-color": "#0066ff",
+                            "border": "none",
+                            "color": "white",
+                            "margin-top" : "30px",
+                            "margin-left": "30px",
+                            "padding": "10px 20px",
+                            "text-align": "center",
+                            "text-decoration": "none",
+                            "display": "inline-block",
+                            "font-size": "16px",
+                        }).html('Deconnexion')
                     ).submit(() => {
                         $.ajax({
                             url : 'logout.php'
