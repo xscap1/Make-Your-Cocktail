@@ -96,9 +96,7 @@ $(document).ready(() => {
 
                     $('#buttonHide').click( () => {
                         $('#formIngredient').hide();
-                        $('#buttonHide').empty();
-
-
+                        $('#buttonHide').hide();
                     })
                 });
             })

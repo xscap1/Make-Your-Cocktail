@@ -75,7 +75,25 @@ $(document).ready(() => {
                     }).html('Créer cocktail'),
 
                     $('<button />').attr({
-                        "name": "cocktailList",
+                        "id" :  "ingredientListButton",
+                        "name": "ingredientListButton",
+                        "type": "submit",
+
+                    }).css({
+                        "background-color": "#0066ff",
+                        "border": "none",
+                        "color": "white",
+                        "margin-left": "30px",
+                        "padding": "10px 20px",
+                        "text-align": "center",
+                        "text-decoration": "none",
+                        "display": "inline-block",
+                        "font-size": "16px",
+                    }).html('Voir la liste des ingrédients'),
+
+                    $('<button />').attr({
+                        "id": "cocktailListButton",
+                        "name": "cocktailListButton",
                         "type": "submit",
 
                     }).css({
