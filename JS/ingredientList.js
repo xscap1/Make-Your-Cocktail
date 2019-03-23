@@ -28,11 +28,15 @@ $(document).ready(() => {
 
                 $('#ingredientListButton').click(() => {
                    $.ajax({
-                       url : 'ingredientList'
+                       url : 'ingredientList',
+                       dataType : 'json'
                    }).done((data) => {
+
                        for(let i = 0; i < data.length; ++i) {
-                           $('<p/>').html(data[i]).slideToggle("medium");
+                            console.log(data.nom);
+                            console.log(data.description)
                        }
+
                    })
                 });
             })
