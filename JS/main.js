@@ -129,16 +129,9 @@ $(document).ready(() => {
                         }).html('Deconnexion')
                     ).submit(() => {
                         $.ajax({
-                            url : 'logout.php'
+                            url : 'logout.php',
                         })
-
-
                     })
-
-
-
-
-
                 );
 
             });

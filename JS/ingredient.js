@@ -33,75 +33,78 @@ $(document).ready(() => {
             $.ajax({
                 url: 'index.php'
             }).done(() => {
-                $('#ingredientButton').click(() => {
-                    $('body').append(
 
-                        $('<button>').attr({
-                            "id" : "buttonHide"
+                $('body').append(
+                    $('<div />')
+                        .attr({
+                            'id' : 'divIngredientForm'
                         })
-                            .css({
-                                "margin-top" : "10px"
-                            })
-                            .html('Cacher'),
+                        .append(
 
-                        $('<form />')
+                            $('<form />')
 
-                            .attr({
-                                "method": "POST",
-                                "action" : "Ingredient.php",
-                                "id": "formIngredient"
-                            })
-                            .append(
-                                $('<h2 />').html('Nouvel ingrédient'),
-                                $('<p />').html('Nom : '),
-                                $('<input />').attr({
-                                    "id": "ingredientNameInput",
-                                    "name": "ingredientNameInput",
-                                    "type": "text",
-                                    "placeholder": "Entrer un ingrédient"
-                                }),
-
-                                $('<p />').html('Description : '),
-                                $('<input />').attr({
-                                    "id": "ingredientDescInput",
-                                    "name": "ingredientDescInput",
-                                    "type": "text",
-                                    "placeholder": "Entrer une description"
-                                }),
-
-                                $('<button />').attr({
-                                    "name": "sendIngredient",
-                                    "id": "sendIngredient",
-                                    "type": "submit"
+                                .attr({
+                                    "method": "POST",
+                                    "action" : "Ingredient.php",
+                                    "id": "formIngredient"
                                 })
-                                    .css({
+                                .append(
+                                    $('<h2 />').html('Nouvel ingrédient'),
+                                    $('<p />').html('Nom : '),
+                                    $('<input />').attr({
+                                        "id": "ingredientNameInput",
+                                        "name": "ingredientNameInput",
+                                        "type": "text",
+                                        "placeholder": "Entrer un ingrédient"
+                                    }),
 
-                                        "display": "block",
-                                        "margin-top": "10px"
+                                    $('<p />').html('Description : '),
+                                    $('<input />').attr({
+                                        "id": "ingredientDescInput",
+                                        "name": "ingredientDescInput",
+                                        "type": "text",
+                                        "placeholder": "Entrer une description"
+                                    }),
+
+                                    $('<button />').attr({
+                                        "name": "sendIngredient",
+                                        "id": "sendIngredient",
+                                        "type": "submit"
                                     })
-                                    .html('Envoyer')
-                            )
+                                        .css({
+
+                                            "display": "block",
+                                            "margin-top": "10px"
+                                        })
+                                        .html('Envoyer')
+                                )
 
 
-                            .submit(() => {
-                                //ingredientList.push(new Ingredient(('#ingredientNameInput').value,('#ingredientDescInput').value));
-                                $.ajax({
-                                    url: 'Ingredient.php',
-                                    data : $('#formIngredient').serialize(),
-                                    success : () => {
-                                        window.location.href = 'index.php';
-                                    }
+                                .submit(() => {
+                                    //ingredientList.push(new Ingredient(('#ingredientNameInput').value,('#ingredientDescInput').value));
+                                    $.ajax({
+                                        url: 'Ingredient.php',
+                                        data : $('#formIngredient').serialize(),
+                                        success : () => {
+                                            window.location.href = 'index.php';
+                                        },
+                                        error : () => {
+                                            $('body').append(
+                                                $('<h2 />').html('Erreur rencontrée')
+                                            );
+                                        }
+                                    })
                                 })
 
+                        ).hide()
+            );
 
-                            })
 
-                    );
 
-                    $('#buttonHide').click( () => {
-                        $('#formIngredient').hide();
-                        $('#buttonHide').hide();
-                    })
+                $('#ingredientButton').click(() => {
+
+                    $('#divIngredientForm').slideToggle("medium");
+
                 });
             })
         }
