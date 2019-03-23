@@ -6,6 +6,7 @@ class Ingredient {
     }
 
 }
+let ingredientList = new Array();
 
 $(document).ready(() => {
 
@@ -47,6 +48,7 @@ $(document).ready(() => {
 
                             .attr({
                                 "method": "POST",
+                                "action" : "Ingredient.php",
                                 "id": "formIngredient"
                             })
                             .append(
@@ -82,12 +84,11 @@ $(document).ready(() => {
 
 
                             .submit(() => {
-
-                                ingredientList.push(new Ingredient(('#ingredientNameInput').value,('#ingredientDescInput').value));
-                                // $.ajax({
-                                //     url: 'ingredient.php',
-                                //     data : $(this).serialize()
-                                // })
+                                //ingredientList.push(new Ingredient(('#ingredientNameInput').value,('#ingredientDescInput').value));
+                                $.ajax({
+                                    url: 'Ingredient.php',
+                                    data : $('#formIngredient').serialize()
+                                })
 
 
                             })

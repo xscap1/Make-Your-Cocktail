@@ -1,6 +1,9 @@
 <?php
 
 session_start();
+
+include 'Utils/db_connect.php';
+
 $username = $_POST['username'];
 $password = $_POST['password'];
 
@@ -16,22 +19,7 @@ $password = $_POST['password'];
 
 // Valeur a retourner en cas de succès de connexion
 
-/**
- * Paramètre pour la base de données
- */
 
-$host = 'mysql-theo-poujol.alwaysdata.net';
-$db   = 'theo-poujol_alloservice';
-$user = '178955_theo';
-$pass = 'boubou';
-$charset = 'utf8mb4';
-
-$dsn = "mysql:host=$host;dbname=$db;charset=$charset";
-$options = [
-    PDO::ATTR_ERRMODE            => PDO::ERRMODE_EXCEPTION,
-    PDO::ATTR_DEFAULT_FETCH_MODE => PDO::FETCH_ASSOC,
-    PDO::ATTR_EMULATE_PREPARES   => false,
-];
 
 
 
@@ -40,8 +28,6 @@ $options = [
 
     try {
 
-        // ESSAI CONNEXION BASE DE DONNÉES
-        $pdo = new PDO($dsn, $user, $pass, $options);
 
         $sql = "SELECT ID FROM USERS WHERE USERNAME=? AND PWD=? ";
         $query = $pdo->prepare($sql);

@@ -4,8 +4,6 @@ class IngredientList {
     }
 }
 
-let ingredientList;
-
 $(document).ready(() => {
 
     $.ajax({
@@ -28,16 +26,9 @@ $(document).ready(() => {
 
             }).done(() => {
                 $('#ingredientListButton').click(() => {
-                    for(let i =0; i < ingredientList.length; ++i) {
-                        $('body').append(
-                            $('<h2>').html("Nom de l\'ingrédient : "),
-                            ingredientList[i].nom,
-                            $('<h2>').html("Description de l\'ingrédient : "),
-                            ingredientList[i].description,
-                            $('<p>').html('-------------------------')
-                        )
+                    if(ingredientList[0].hasOwnProperty("nom")) {
+                        console.log(ingredientList[0].nom);
                     }
-                    console.log('fshiufhe');
                 });
             })
         }
