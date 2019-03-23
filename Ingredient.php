@@ -8,6 +8,9 @@ $descr = $_POST['ingredientDescInput'];
 
 $result = false;
 
+
+
+
 try {
 
     $sql = "INSERT INTO INGREDIENTS (NOM,DESCRIPTION) VALUES (?,?)";

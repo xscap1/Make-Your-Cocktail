@@ -34,6 +34,7 @@ $(document).ready(() => {
                 url: 'index.php'
             }).done(() => {
 
+
                 $('body').append(
                     $('<div />')
                         .attr({
@@ -77,11 +78,12 @@ $(document).ready(() => {
                                             "margin-top": "10px"
                                         })
                                         .html('Envoyer')
+
                                 )
 
-
                                 .submit(() => {
-                                    //ingredientList.push(new Ingredient(('#ingredientNameInput').value,('#ingredientDescInput').value));
+                                    ingredientList.push(new Ingredient(('#ingredientNameInput').value,('#ingredientDescInput').value));
+
                                     $.ajax({
                                         url: 'Ingredient.php',
                                         data : $('#formIngredient').serialize(),
@@ -102,10 +104,27 @@ $(document).ready(() => {
 
 
                 $('#ingredientButton').click(() => {
-
                     $('#divIngredientForm').slideToggle("medium");
-
+                    $('#ingredientButton').css('background-color', '#33cc33');
                 });
+
+
+                $('#ingredientNameInput').on('keyup', () => {
+                        $('#ingredientNameInput').css('border','2px solid #0f0');
+                });
+
+                $('#ingredientDescInput').on('keyup', () => {
+                    $('#ingredientDescInput').css('border','2px solid #0f0');
+                });
+
+
+
+
+
+
+
+
+
             })
         }
     });

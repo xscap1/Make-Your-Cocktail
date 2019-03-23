@@ -25,10 +25,15 @@ $(document).ready(() => {
                 url: 'index.php'
 
             }).done(() => {
+
                 $('#ingredientListButton').click(() => {
-                    if(ingredientList[0].hasOwnProperty("nom")) {
-                        console.log(ingredientList[0].nom);
-                    }
+                   $.ajax({
+                       url : 'ingredientList'
+                   }).done((data) => {
+                       for(let i = 0; i < data.length; ++i) {
+                           $('<p/>').html(data[i]).slideToggle("medium");
+                       }
+                   })
                 });
             })
         }
