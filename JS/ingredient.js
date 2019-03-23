@@ -87,7 +87,10 @@ $(document).ready(() => {
                                 //ingredientList.push(new Ingredient(('#ingredientNameInput').value,('#ingredientDescInput').value));
                                 $.ajax({
                                     url: 'Ingredient.php',
-                                    data : $('#formIngredient').serialize()
+                                    data : $('#formIngredient').serialize(),
+                                    success : () => {
+                                        window.location.href = 'index.php';
+                                    }
                                 })
 
 
