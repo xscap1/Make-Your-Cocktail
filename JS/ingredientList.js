@@ -25,20 +25,32 @@ $(document).ready(() => {
                 url: 'index.php'
 
             }).done(() => {
-
-                $('#ingredientListButton').click(() => {
                    $.ajax({
-                       url : 'ingredientList',
-                       dataType : 'json'
+                       url : "IngredientList.php",
+                       //dataType : 'json'
                    }).done((data) => {
 
-                       for(let i = 0; i < data.length; ++i) {
-                            console.log(data.nom);
-                            console.log(data.description)
+                       for( let i = 0; i < data.length; ++i) {
+                           $('body').append(
+                               $('<div />').attr('class','divList')
+                                   .append(
+                                       $('<h2 />').html('Nom : '),
+                                       $('<p/>').html(data[i].NOM),
+                                       $('<h2 />').html('Description : '),
+                                       $('<p/>').html(data[i].DESCRIPTION),
+                                   ).hide()
+                           );
+
                        }
 
-                   })
-                });
+                   });
+
+
+                $('#ingredientListButton').click( () => {
+                    $('#ingredientListButton').css('background-color', '#33cc33');
+                    $('.divList').slideToggle("medium");
+                })
+
             })
         }
 
