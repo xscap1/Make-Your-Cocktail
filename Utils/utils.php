@@ -19,6 +19,7 @@ function start_page($title) {
             <script src="JS/main.js"></script>
             <script src="JS/ingredient.js"></script>
             <script src="JS/ingredientList.js"></script>
+            <script src="JS/cocktail.js"></script>
             <link rel="stylesheet"  type="text/css" href="css/login.css">
             
         </head> 

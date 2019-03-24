@@ -34,10 +34,14 @@ $(document).ready(() => {
                            $('body').append(
                                $('<div />').attr('class','divList')
                                    .append(
-                                       $('<h2 />').html('Nom : '),
+                                       $('<h2 />').html('-----------------------'),
+                                       $('<h2 />')
+                                           .html('Nom : '),
                                        $('<p/>').html(data[i].NOM),
-                                       $('<h2 />').html('Description : '),
+                                       $('<h2 />')
+                                           .html('Description : '),
                                        $('<p/>').html(data[i].DESCRIPTION),
+
                                    ).hide()
                            );
 
@@ -49,7 +53,9 @@ $(document).ready(() => {
                 $('#ingredientListButton').click( () => {
                     $('#ingredientListButton').css('background-color', '#33cc33');
                     $('.divList').slideToggle("medium");
-                })
+                });
+
+
 
             })
         }
