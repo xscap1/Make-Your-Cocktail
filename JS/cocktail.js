@@ -85,23 +85,6 @@ $(document).ready(() => {
                                     })
                                         .html('Ajouter ingrédient'),
 
-                                    $('<div />').attr('class','divSelector').append(
-                                        $('<select />').attr({
-                                            'class' : 'selectorValue',
-                                        })
-                                    ).hide(),
-
-                                    $.ajax({
-                                        url : 'IngredientList.php',
-                                    }).done( (data) => {
-
-                                        for( let i = 0; i < data.length; ++i) {
-                                           $('.selectorValue').append($('<option>', {
-                                               value : i,
-                                               text : data[i].NOM
-                                           }))
-                                        }
-                                    })
                                 )
                         )
                 );
@@ -114,8 +97,30 @@ $(document).ready(() => {
                 });
 
                 $('#buttonAddIngredient').click( () => {
-                    $('.divSelector').slideToggle("medium");
-                    console.log('fe');
+
+                    $('#formCocktail').append(
+                        $('<div />').attr('class','divSelector').append(
+                            $('<select />').attr({
+                                'class' : 'selectorValue',
+                            }).css({
+
+                            })
+                        ),
+
+                    $.ajax({
+                        url : 'IngredientList.php',
+                    }).done( (data) => {
+
+                        for( let i = 0; i < data.length; ++i) {
+                            $('.selectorValue').append($('<option>', {
+                                value : i,
+                                text : data[i].NOM
+                            }))
+                        }
+                    })
+
+
+                    );
                 })
             })
         }
