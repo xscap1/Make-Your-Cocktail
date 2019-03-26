@@ -103,7 +103,7 @@ $(document).ready(() => {
                             $('<select />').attr({
                                 'class' : 'selectorValue',
                             }).css({
-
+                                'margin-top' : '10px'
                             })
                         ),
 
