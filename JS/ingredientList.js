@@ -28,6 +28,8 @@ $(document).ready(() => {
                    $.ajax({
                        url : "IngredientList.php",
                        //dataType : 'json'
+
+                       // Avec data on récupère tous les ingrédients de la BD avec un appel ajax et un encodage json
                    }).done((data) => {
 
                        for( let i = 0; i < data.length; ++i) {

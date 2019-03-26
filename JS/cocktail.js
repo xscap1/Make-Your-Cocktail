@@ -73,11 +73,35 @@ $(document).ready(() => {
                                             "display": "block",
                                             "margin-top": "10px"
                                         })
-                                        .html('Envoyer')
+                                        .html('Envoyer'),
 
+                                    $('<button />').attr({
+                                        'id' : 'buttonAddIngredient',
+                                        'name' : 'buttonAddIngredient',
+                                        "type": "button"
+                                    }) .css({
+                                        "display": "block",
+                                        "margin-top": "10px"
+                                    })
+                                        .html('Ajouter ingrédient'),
 
+                                    $('<div />').attr('class','divSelector').append(
+                                        $('<select />').attr({
+                                            'class' : 'selectorValue',
+                                        })
+                                    ).hide(),
 
+                                    $.ajax({
+                                        url : 'IngredientList.php',
+                                    }).done( (data) => {
 
+                                        for( let i = 0; i < data.length; ++i) {
+                                           $('.selectorValue').append($('<option>', {
+                                               value : i,
+                                               text : data[i].NOM
+                                           }))
+                                        }
+                                    })
                                 )
                         )
                 );
@@ -88,6 +112,11 @@ $(document).ready(() => {
                     $('#divCocktail').slideToggle("medium");
                     $('#cocktailButton').css('background-color', '#33cc33');
                 });
+
+                $('#buttonAddIngredient').click( () => {
+                    $('.divSelector').slideToggle("medium");
+                    console.log('fe');
+                })
             })
         }
 
