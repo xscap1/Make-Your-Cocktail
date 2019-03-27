@@ -75,7 +75,8 @@ $(document).ready(() => {
                                         .css({
 
                                             "display": "block",
-                                            "margin-top": "10px"
+                                            "margin-top": "10px",
+                                            "margin-left": "200px"
                                         })
                                         .html('Envoyer')
 

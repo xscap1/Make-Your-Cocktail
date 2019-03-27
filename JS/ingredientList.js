@@ -48,18 +48,14 @@ $(document).ready(() => {
                            );
 
                        }
+                   })
 
-                   });
+            });
 
-
-                $('#ingredientListButton').click( () => {
-                    $('#ingredientListButton').css('background-color', '#33cc33');
-                    $('.divList').slideToggle("medium");
-                });
-
-
-
-            })
+            $('#ingredientListButton').click( () => {
+                $('#ingredientListButton').css('background-color', '#33cc33');
+                $('.divList').slideToggle("medium");
+            });
         }
 
     });

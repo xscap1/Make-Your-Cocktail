@@ -65,17 +65,6 @@ $(document).ready(() => {
                                     }),
 
                                     $('<button />').attr({
-                                        "name": "sendCocktail",
-                                        "id": "sendCocktail",
-                                        "type": "submit"
-                                    })
-                                        .css({
-                                            "display": "block",
-                                            "margin-top": "10px"
-                                        })
-                                        .html('Envoyer'),
-
-                                    $('<button />').attr({
                                         'id' : 'buttonAddIngredient',
                                         'name' : 'buttonAddIngredient',
                                         "type": "button"
@@ -84,6 +73,18 @@ $(document).ready(() => {
                                         "margin-top": "10px"
                                     })
                                         .html('Ajouter ingrédient'),
+
+
+                                    $('<button />').attr({
+                                        "name": "sendCocktail",
+                                        "id": "sendCocktail",
+                                        "type": "submit"
+                                    })
+                                        .css({
+                                            "display": "block",
+
+                                        })
+                                        .html('Envoyer'),
 
                                 )
                         )
@@ -99,7 +100,8 @@ $(document).ready(() => {
                 $('#buttonAddIngredient').click( () => {
 
                     $('#formCocktail').append(
-                        $('<div />').attr('class','divSelector').append(
+                        $('<div />').attr('class','divSelector')
+                            .append(
                             $('<select />').attr({
                                 'class' : 'selectorValue',
                             }).css({
@@ -121,7 +123,8 @@ $(document).ready(() => {
 
 
                     );
-                })
+                });
+
             })
         }
 
