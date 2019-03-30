@@ -127,9 +127,17 @@ $(document).ready(() => {
                                 })
                                     .css('margin-left','10px'),
                                 $('<select />').attr({
-                                    'id' : 'cocktailIngredientUnitSelect'
-                                })  .val(['l','cl','ml','g','mg'])
-                                    .css('margin-left','10px'),
+                                    'id' : 'cocktailIngredientUnitSelect',
+                                    'name' : 'cocktailIngredientUnitSelect'
+                                })  .append(
+                                    '<option value="0"> --Choisir une unité-- </option>',
+                                    '<option value="1"> L </option>',
+                                    '<option value="2"> cL </option>',
+                                    '<option value="3"> mL </option>',
+                                    '<option value="4"> g </option>',
+                                    '<option value="5"> mg </option>',
+
+                                ),
 
                                 $('<button/>').attr({
                                     'id' : 'resetButton',
