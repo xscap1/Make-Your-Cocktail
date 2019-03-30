@@ -38,15 +38,15 @@ $(document).ready(() => {
                 $('body').append(
                     $('<div />')
                         .attr({
-                            'id' : 'divIngredientForm'
+                            'id' : 'divIngredientForm',
+                            'name' : 'divIngredientForm'
                         })
                         .append(
 
                             $('<form />')
 
                                 .attr({
-                                    "method": "POST",
-                                    "action" : "Ingredient.php",
+
                                     "id": "formIngredient"
                                 })
                                 .append(
@@ -86,10 +86,11 @@ $(document).ready(() => {
                                     ingredientList.push(new Ingredient(('#ingredientNameInput').value,('#ingredientDescInput').value));
 
                                     $.ajax({
+                                        type : 'POST',
                                         url: 'Ingredient.php',
                                         data : $('#formIngredient').serialize(),
                                         success : () => {
-                                            window.location.href = 'index.php';
+                                            alert('Ingrédient créé');
                                         },
                                         error : () => {
                                             $('body').append(

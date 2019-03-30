@@ -38,9 +38,10 @@ $(document).ready(() => {
                             $('<form />')
 
                                 .attr({
-                                    "method": "POST",
-                                    "action" : "Cocktail.php",
-                                    "id": "formCocktail"
+                                    /*"method": "POST",
+                                    "action" : "Cocktail.php",*/
+                                    "id": "formCocktail",
+                                    "name" : "formCocktail"
                                 })
 
                                 .append(
@@ -88,7 +89,18 @@ $(document).ready(() => {
                                         })
                                         .html('Envoyer'),
 
-                                )
+                                ).submit( function() {
+
+                                    $.ajax({
+                                        type : 'POST',
+                                        url : 'Cocktail.php',
+                                        data : $(this).serialize(),
+                                        success : () => {
+                                            alert('Cocktail créé');
+                                        }
+                                    })
+
+                            })
                         )
                 );
 
