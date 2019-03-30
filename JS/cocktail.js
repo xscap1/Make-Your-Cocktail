@@ -126,6 +126,7 @@ $(document).ready(() => {
                                     'placeholder' : 'Combien'
                                 })
                                     .css('margin-left','10px'),
+
                                 $('<select />').attr({
                                     'id' : 'cocktailIngredientUnitSelect',
                                     'name' : 'cocktailIngredientUnitSelect'
@@ -137,14 +138,14 @@ $(document).ready(() => {
                                     '<option value="4"> g </option>',
                                     '<option value="5"> mg </option>',
 
-                                ),
+                                ).css('margin-left','10px'),
 
                                 $('<button/>').attr({
                                     'id' : 'resetButton',
                                     'name' : 'resetButton',
                                     'type' : 'button'
                                 })
-                                // Pas de fonction flèchée car si on l'utilise ici, $(this) pointe vers Window
+                                // Pas de fonction flèchée ici car si on l'utilise ici, $(this) pointe vers Window
                                 //  et non vers l'élement cliqué
 
                                     .click( function() {
@@ -152,7 +153,7 @@ $(document).ready(() => {
                                         but.parent().remove();
                                 })
                                     .css('margin-left','10px')
-                                    .html('retirer')
+                                    .html('Retirer')
 
 
                             )
