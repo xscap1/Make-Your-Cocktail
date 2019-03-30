@@ -8,6 +8,8 @@ class Cocktail {
 
 }
 
+let ingredients = [];
+
 $(document).ready(() => {
 
     $.ajax({
@@ -97,33 +99,68 @@ $(document).ready(() => {
                     $('#cocktailButton').css('background-color', '#33cc33');
                 });
 
+                $.ajax({
+                    url : 'IngredientList.php',
+                }).done( (data) => {
+
+
+                    for( let i = 0; i < data.length; ++i) {
+                        ingredients.push(data[i].NOM);
+                    }
+                });
+
                 $('#buttonAddIngredient').click( () => {
 
+
                     $('#formCocktail').append(
-                        $('<div />').attr('class','divSelector')
+                        $('<div />').attr('id','divSelector')
                             .append(
-                            $('<select />').attr({
-                                'class' : 'selectorValue',
-                            }).css({
-                                'margin-top' : '10px'
-                            })
-                        ),
+                                $('<select />').attr({
+                                    'class' : 'selectorValue',
+                                }).css({
+                                    'margin-top' : '10px'
+                                }),
+                                $('<input/>').attr({
+                                    'id' : 'cocktailIngredientUnit',
+                                    'name' : 'cocktailIngredientUnit',
+                                    'placeholder' : 'Combien'
+                                })
+                                    .css('margin-left','10px'),
+                                $('<select />').attr({
+                                    'id' : 'cocktailIngredientUnitSelect'
+                                })  .val(['l','cl','ml','g','mg'])
+                                    .css('margin-left','10px'),
 
-                    $.ajax({
-                        url : 'IngredientList.php',
-                    }).done( (data) => {
+                                $('<button/>').attr({
+                                    'id' : 'resetButton',
+                                    'name' : 'resetButton',
+                                    'type' : 'button'
+                                })
+                                // Pas de fonction flèchée car si on l'utilise ici, $(this) pointe vers Window
+                                //  et non vers l'élement cliqué
 
-                        for( let i = 0; i < data.length; ++i) {
-                            $('.selectorValue').append($('<option>', {
-                                value : i,
-                                text : data[i].NOM
-                            }))
-                        }
-                    })
+                                    .click( function() {
+                                        let but = $(this);
+                                        but.parent().remove();
+                                })
+                                    .css('margin-left','10px')
+                                    .html('retirer')
 
 
+                            )
                     );
+
+                    for (let i = 0; i < ingredients.length; ++i) {
+                        $(".selectorValue").append($('<option>', {
+                            value : i,
+                            text : ingredients[i]
+                        }))
+                    }
+
+
                 });
+
+
 
             })
         }

@@ -7,7 +7,7 @@ start_page("Accueil");
 
 
 
-if(isset($_SESSION['user_id'])){
+if(isset($_SESSION['user_id'])) {
     echo ('<p> Connecté en tant que  : ' . $_SESSION['user_id'] . ' </p>');
     //echo("<button type='submit'> DECONNEXION </button><br><br>");
 }
