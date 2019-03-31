@@ -1,9 +1,3 @@
-class IngredientList {
-    constructor() {
-        this.list = new Array();
-    }
-}
-
 $(document).ready(() => {
 
     $.ajax({
@@ -29,7 +23,9 @@ $(document).ready(() => {
                        url : "IngredientList.php",
                        //dataType : 'json'
 
-                       // Avec data on récupère tous les ingrédients de la BD avec un appel ajax et un encodage json
+                       /**
+                        * Avec data on récupère tous les ingrédients de la BD avec un appel ajax et un encodage json
+                        */
                    }).done((data) => {
 
                        for( let i = 0; i < data.length; ++i) {
@@ -52,8 +48,12 @@ $(document).ready(() => {
 
             });
 
+            /**
+             * On change la couleur du bouton
+             */
+
             $('#ingredientListButton').click( () => {
-                $('#ingredientListButton').css('background-color', '#33cc33');
+                $('#ingredientListButton').css('background-color', 'orange');
                 $('.divList').slideToggle("medium");
             });
         }

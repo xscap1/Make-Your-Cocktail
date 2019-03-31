@@ -1,25 +1,35 @@
+body {
+    background-color : beige;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+
 #username {
-    background-color: red;
-    border: 0;
-    margin-left: 50px;
-    margin-right: 20px;
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
 }
 
 #password {
-
-    background-color: aquamarine;
-    border: 0;
-    margin-right: 20px;
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
 }
 
 #buttonForm {
-background-color: #0066ff;
-border: none;
-color: white;
-margin-left: 30px;
-padding: 10px 20px;
-text-align: center;
-text-decoration: none;
-display: inline-block;
-font-size: 16px;
+    background-color: grey;
+    color: mintcream;
+    font-size: 15px;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    cursor: pointer;
+    width: 100%;
 }
+

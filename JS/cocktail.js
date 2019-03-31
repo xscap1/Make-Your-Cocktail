@@ -1,12 +1,4 @@
-class Cocktail {
-
-    constructor(nom, description) {
-        this.nom = nom;
-        this.description = description;
-        this.list = new Array(Ingredient);
-    }
-
-}
+// Tableau d'ingrédients Test d'une nouvelle façon
 
 let ingredients = [];
 
@@ -20,7 +12,7 @@ $(document).ready(() => {
         if (data.success === false) {
             /* La personne n'est pas connectée */
 
-            // Gérer par l'index.
+            // Déjà gérer par l'index.
 
 
         }
@@ -33,25 +25,34 @@ $(document).ready(() => {
             }).done( () => {
 
                 $('body').append(
+                    /**
+                     * Création div contenant le formulaire de création des cocktails
+                     */
+
                     $('<div />').attr('id','divCocktail')
                         .append(
+
+                            /**
+                             * Formulaire de création des cocktails
+                             */
+
                             $('<form />')
 
                                 .attr({
-                                    /*"method": "POST",
-                                    "action" : "Cocktail.php",*/
                                     "id": "formCocktail",
                                     "name" : "formCocktail"
                                 })
 
                                 .append(
+
                                     $('<h2 />').html('Nouveau cocktail'),
                                     $('<p />').html('Nom : '),
                                     $('<input />').attr({
                                         "id": "cocktailNameInput",
                                         "name": "cocktailNameInput",
                                         "type": "text",
-                                        "placeholder": "Entrer un nom de cocktail"
+                                        "placeholder": "Entrer un nom de cocktail",
+                                        "required" : "true"
                                     }).css({
                                         "width" : "135px",
                                     }),
@@ -61,7 +62,8 @@ $(document).ready(() => {
                                         "id": "cocktailDescInput",
                                         "name": "cocktailDescInput",
                                         "type": "text",
-                                        "placeholder": "Entrer une description à votre cocktail"
+                                        "placeholder": "Entrer une description à votre cocktail",
+                                        "required" : "true"
                                     }).css({
                                         "width" : "200px",
                                         "height" : "50px",
@@ -85,17 +87,26 @@ $(document).ready(() => {
                                     })
                                         .css({
                                             "display": "block",
+                                            "margin-top" : "10px"
 
                                         })
                                         .html('Envoyer'),
 
                                 ).submit( function() {
 
-                                    $.ajax({
+                                /**
+                                 * On envoie les données du formulaire
+                                 */
+
+                                $.ajax({
                                         type : 'POST',
                                         url : 'Cocktail.php',
                                         data : $(this).serialize(),
                                         success : () => {
+
+                                            /**
+                                             * On signale que le cocktail est créé
+                                             */
                                             alert('Cocktail créé');
                                         }
                                     })
@@ -104,17 +115,33 @@ $(document).ready(() => {
                         )
                 );
 
+                /**
+                 * On cache la div du formulaire afin d'effectuer un slideToogle plus tard
+                 */
+
                 $('#divCocktail').hide();
+
+                /**
+                 * Fonction affichant le formulaire de création des cocktails
+                 */
 
                 $('#cocktailButton').click( () => {
                     $('#divCocktail').slideToggle("medium");
-                    $('#cocktailButton').css('background-color', '#33cc33');
+                    $('#cocktailButton').css('background-color', 'orange');
                 });
+
+                /**
+                 * On charge les ingredients de la base de données afin de les mettre dans un select
+                 */
 
                 $.ajax({
                     url : 'IngredientList.php',
                 }).done( (data) => {
 
+
+                    /**
+                     * On récupère les données
+                     */
 
                     for( let i = 0; i < data.length; ++i) {
                         ingredients.push(data[i].NOM);
@@ -123,6 +150,10 @@ $(document).ready(() => {
 
                 $('#buttonAddIngredient').click( () => {
 
+
+                    /**
+                     * On créé les selecteurs
+                     */
 
                     $('#formCocktail').append(
                         $('<div />').attr('id','divSelector')
@@ -157,8 +188,11 @@ $(document).ready(() => {
                                     'name' : 'resetButton',
                                     'type' : 'button'
                                 })
-                                // Pas de fonction flèchée ici car si on l'utilise ici, $(this) pointe vers Window
-                                //  et non vers l'élement cliqué
+
+                                /**
+                                 * Pas de fonction flèchée ici car si on l'utilise, $(this) pointe vers Window
+                                 * et non vers l'élement cliqué.
+                                 */
 
                                     .click( function() {
                                         let but = $(this);
@@ -170,6 +204,11 @@ $(document).ready(() => {
 
                             )
                     );
+
+
+                    /**
+                     * On injecte les données dans les selects.
+                     */
 
                     for (let i = 0; i < ingredients.length; ++i) {
                         $(".selectorValue").append($('<option>', {

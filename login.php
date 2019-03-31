@@ -106,9 +106,13 @@ echo json_encode(['message' => $msgSuccess]);
 </head>
 <body>
 
-<form method="post" action="login.php">
-    <input type="text" name="username" id="username" placeholder="username">
-    <input type="password" name="password" id="password" placeholder="password">
+<form id="loginForm" name="loginForm" method="post" action="login.php">
+    <br>
+    <label for="usr"><b> Nom d'utilisateur </b></label>
+    <input type="text" name="username" id="username" placeholder="Entrer votre nom d'utilisateur" required>
+    <br>
+    <label for="pwd"><b> Mot de passe </b></label>
+    <input type="password" name="password" id="password" placeholder="Entrer votre nom mot de passe" required>
     <button type="submit" name="buttonForm" id="buttonForm"> Se connecter </button>
 </form>
 

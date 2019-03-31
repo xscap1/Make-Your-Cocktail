@@ -23,7 +23,10 @@ $(document).ready(() => {
                     url : "CocktailList.php",
                     //dataType : 'json'
 
-                    // Avec data on récupère tous les ingrédients de la BD avec un appel ajax et un encodage json
+                    /**
+                     * Avec data on récupère tous les ingrédients de la BD avec un appel ajax et un encodage json
+                     */
+
                 }).done((data) => {
 
                     for( let i = 0; i < data.length; ++i) {
@@ -33,11 +36,12 @@ $(document).ready(() => {
                                     $('<h2 />').html('-----------------------'),
                                     $('<h2 />')
                                         .html('Nom : '),
-                                    $('<p/>').html(data[i].NOM),
-                                    $('<h2 />')
-                                        .html('Description : '),
-                                    $('<p/>').html(data[i].DESCRIPTION),
-
+                                    $('<a />')
+                                        .css('text-decoration','none')
+                                        .click( function() {
+                                            $(this).after($('<p/>').html(data[i].DESCRIPTION));
+                                        })
+                                        .html(data[i].NOM),
                                 ).hide()
                         );
 
@@ -46,8 +50,12 @@ $(document).ready(() => {
 
             });
 
+            /**
+             * On change la couleur du bouton
+             */
+
             $('#cocktailListButton').click( () => {
-                $('#cocktailListButton').css('background-color', '#33cc33');
+                $('#cocktailListButton').css('background-color', 'orange');
                 $('.divListCocktail').slideToggle("medium");
             });
         }

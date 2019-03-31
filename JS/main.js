@@ -19,13 +19,17 @@ $(document).ready(() => {
                 url : 'index.php'
             }).done(() => {
                 $('body').append(
+                    /**
+                     * Affichage de tous les principaux boutons
+                     */
+
                     $('<button />').attr({
                         "id" : "ingredientButton",
                         "name": "ingredientButton",
                         "type": "submit"
 
                     }).css({
-                        "background-color": "#0066ff",
+                        "background-color": "grey",
                         "border": "none",
                         "color": "white",
                         "margin-left": "30px",
@@ -49,7 +53,7 @@ $(document).ready(() => {
                         "type": "submit",
 
                     }).css({
-                        "background-color": "#0066ff",
+                        "background-color": "grey",
                         "border": "none",
                         "color": "white",
                         "margin-left": "30px",
@@ -66,7 +70,7 @@ $(document).ready(() => {
                         "type": "submit",
 
                     }).css({
-                        "background-color": "#0066ff",
+                        "background-color": "grey",
                         "border": "none",
                         "color": "white",
                         "margin-left": "30px",
@@ -83,7 +87,7 @@ $(document).ready(() => {
                         "type": "submit",
 
                     }).css({
-                        "background-color": "#0066ff",
+                        "background-color": "grey",
                         "border": "none",
                         "color": "white",
                         "margin-left": "30px",
@@ -102,7 +106,7 @@ $(document).ready(() => {
                             "type": "submit"
 
                         }).css({
-                            "background-color": "#0066ff",
+                            "background-color": "grey",
                             "border": "none",
                             "color": "white",
                             "margin-top" : "30px",
@@ -112,7 +116,7 @@ $(document).ready(() => {
                             "text-decoration": "none",
                             "display": "inline-block",
                             "font-size": "16px",
-                        }).html('Deconnexion')
+                        }).html('Déconnexion')
                     ).submit(() => {
                         $.ajax({
                             url : 'logout.php',
