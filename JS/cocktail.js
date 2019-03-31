@@ -25,6 +25,7 @@ $(document).ready(() => {
             }).done( () => {
 
                 $('body').append(
+
                     /**
                      * Création div contenant le formulaire de création des cocktails
                      */
@@ -158,6 +159,8 @@ $(document).ready(() => {
                     $('#formCocktail').append(
                         $('<div />').attr('id','divSelector')
                             .append(
+
+
                                 $('<select />').attr({
                                     'class' : 'selectorValue',
                                 }).css({
@@ -180,6 +183,7 @@ $(document).ready(() => {
                                     '<option value="3"> mL </option>',
                                     '<option value="4"> g </option>',
                                     '<option value="5"> mg </option>',
+                                    '<option value="6"> c-à-café </option>'
 
                                 ).css('margin-left','10px'),
 

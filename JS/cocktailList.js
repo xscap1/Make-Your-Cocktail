@@ -29,11 +29,16 @@ $(document).ready(() => {
 
                 }).done((data) => {
 
+
+
                     for( let i = 0; i < data.length; ++i) {
                         $('body').append(
+
                             $('<div />').attr('class','divListCocktail')
                                 .append(
+
                                     $('<h2 />').html('-----------------------'),
+                                    $('<p/>').html('Cliquer sur le nom du cocktail pour afficher son détail'),
                                     $('<h2 />')
                                         .html('Nom : '),
                                     $('<a />')
